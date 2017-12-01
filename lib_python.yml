@@ -1,0 +1,9 @@
+---
+- hosts: all
+  connection: ssh
+  become: yes
+  become_method: sudo
+  gather_facts: no
+  tasks: 
+    - name: Install libselinux-python in order to run cron job
+      yum: name=libselinux-python state=installed
